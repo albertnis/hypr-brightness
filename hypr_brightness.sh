@@ -38,9 +38,5 @@ if [ "$focused_name" == "eDP-1" ]; then
         brillo -u 150000 -A 8
     fi
 else
-    if [ "$direction" == "-" ]; then
-        ddcutil --sleep-multiplier=.2 --display=$focused_id setvcp 10 - 15
-    else
-        ddcutil --sleep-multiplier=.2 --display=$focused_id setvcp 10 + 15
-    fi
+    ddcutil --sleep-multiplier=.2 --display=$focused_id setvcp 10 $direction 15
 fi
