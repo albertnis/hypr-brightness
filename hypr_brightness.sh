@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env sh
 set +e
 
 usage="Usage: $0 [+] or [-]"
