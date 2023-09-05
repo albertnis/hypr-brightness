@@ -28,9 +28,6 @@ monitor_data=$(hyprctl monitors -j)
 focused_name=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .name')
 focused_id=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .id')
 
-echo $focused_name
-echo $focused_id
-
 if [ "$focused_name" == "eDP-1" ]; then
     if [ "$direction" == "-" ]; then
         brillo -u 150000 -U 8
